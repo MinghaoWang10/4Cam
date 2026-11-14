@@ -1,6 +1,6 @@
 """4Cam 主入口：搜索 2 Basler + 2 海康的四相机布局与步道几何。
 
-用法（在 sim 目录下）：
+用法（在 simulation 目录下）：
     python scripts/search_layout.py
     python scripts/search_layout.py --travel 1300 --sides RL --sigma 0.3
     python scripts/search_layout.py --top-k 3 --mc-n 80
