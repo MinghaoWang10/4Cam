@@ -71,7 +71,7 @@ def write_summary(path: Path, score: LayoutScore, walkway: Walkway,
     w = walkway.summary()
     lines = [
         "=" * 72,
-        "sim-v3 四相机布局结果",
+        "4Cam 四相机布局结果",
         "=" * 72,
         "",
         "=== 步道几何 ===",

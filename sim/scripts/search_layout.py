@@ -1,6 +1,6 @@
-"""sim-v3 主入口：搜索 2 Basler + 2 海康的四相机布局与步道几何。
+"""4Cam 主入口：搜索 2 Basler + 2 海康的四相机布局与步道几何。
 
-用法（在 sim-v3 目录下）：
+用法（在 sim 目录下）：
     python scripts/search_layout.py
     python scripts/search_layout.py --travel 1300 --sides RL --sigma 0.3
     python scripts/search_layout.py --top-k 3 --mc-n 80
@@ -36,7 +36,7 @@ def fmt_layout(score) -> str:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="sim-v3 异构四相机布局搜索")
+    ap = argparse.ArgumentParser(description="4Cam 异构四相机布局搜索")
     ap.add_argument("--travel", type=float, default=1300.0,
                     help="一个步态周期的前进距离 (mm)")
     ap.add_argument("--sides", default="RL", choices=("R", "L", "RL"))
@@ -56,7 +56,7 @@ def main() -> None:
     traj = trajectory.load(travel_mm=args.travel)
     walkway = default_walkway()
     print("=" * 72)
-    print(f"sim-v3 布局搜索：1 周期，前进 {args.travel:.0f} mm，"
+    print(f"4Cam 布局搜索：1 周期，前进 {args.travel:.0f} mm，"
           f"{args.sides}，σ={args.sigma} px")
     print(f"步道：{walkway.length_mm:.0f} × {walkway.width_mm:.0f} mm，"
           f"分析窗口 {walkway.analysis_length_mm:.0f} mm")
